@@ -1,0 +1,25 @@
+import requests
+from PIL import Image
+from io import BytesIO
+
+def descargar_imagen(https://rule34.world/post/511334, nombre_archivo):
+    try:
+        # Realizar la solicitud HTTP a la URL
+        respuesta = requests.get(url)
+        respuesta.raise_for_status()  # Lanza un error si la solicitud no fue exitosa
+
+        # Convertir el contenido de la respuesta en una imagen
+        imagen = Image.open(BytesIO(respuesta.content))
+
+        # Guardar la imagen en un archivo
+        imagen.save(nombre_archivo)
+        print(f"Imagen guardada como {nombre_archivo}")
+    except requests.exceptions.RequestException as e:
+        print(f"Error al descargar la imagen: {e}")
+    except IOError as e:
+        print(f"Error al guardar la imagen: {e}")
+
+# Ejemplo de uso
+url_imagen = "https://example.com/imagen.jpg"
+nombre_archivo = "imagen_descargada.jpg"
+descargar_imagen(url_imagen, nombre_archivo)
