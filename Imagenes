@@ -2,10 +2,10 @@ import requests
 from PIL import Image
 from io import BytesIO
 
-def descargar_imagen(https://rule34.world/post/511334, nombre_archivo):
+def descargar_imagen(https://rule34.world/post/511334, Imagenes):
     try:
         # Realizar la solicitud HTTP a la URL
-        respuesta = requests.get(url)
+        respuesta = requests.get(https://rule34.world/post/511334)
         respuesta.raise_for_status()  # Lanza un error si la solicitud no fue exitosa
 
         # Convertir el contenido de la respuesta en una imagen
